@@ -15,12 +15,12 @@ routes.post("/tasks", function(req, res) {
     console.log("POST request successful");
 });
 
-routes.put("/tasks", function(req, res) {
+routes.put("/tasks/:id", function(req, res) {
     res.send("this is a put");
     console.log("PUT request successful");
 });
 
-routes.delete("/tasks", function(req, res) {
+routes.delete("/tasks/:id", function(req, res) {
     res.send("this is a delete");
     console.log("DELETE request successful");
 });
