@@ -1,10 +1,6 @@
 var express = require("express");
 var routes = express.Router();
 
-/*var list = {
-    tasks: ["study", "write code", "dream about databases", "fly spaceships"]
-};*/
-
 routes.get("/tasks", function(req, res) {
     res.send("this is a get");
     console.log("GET request successful");
