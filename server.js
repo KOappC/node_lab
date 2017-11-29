@@ -8,7 +8,7 @@ app.use("/", toDos);
 
 var server = app.listen(3000, function() {
     var port = server.address().port;
-    console.log("the server is up and running");
+    console.log("the server is up and running on localhost:3000");
 });
 
 
