@@ -1,6 +1,19 @@
 (function() {
     var taskForm = {
-        controller: "FormController",
+        controller: function(TaskService) {
+            var $ctrl = this;
+            $ctrl.toDoList = ["Grocery Shop", "Laundry", "Get Gas", "Vacuum"];
+            $ctrl.getTasks = function() {
+                TaskService.getTasks().then(function(response) {
+                    console.log(response);
+                })
+            };
+            $ctrl.addToDo = function(index) {
+                $ctrl.toDoList.push(index);
+                $ctrl.newToDo = "";
+
+            }
+        },
         template: `
         <div class="totalList">
             <div class="listTitle">

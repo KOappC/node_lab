@@ -1,10 +1,10 @@
 (function() {
-    function TaskService() {
+    function TaskService($http) {
 
         return {
             addTask: addTask,
             deleteTask: deleteTask,
-            //editTask: editTask,
+            editTask: editTask,
             getTasks: getTasks
         };
 
@@ -29,9 +29,18 @@
         }
 
         function deleteTask(index) {
-            return $htp({
-                url: "/tasks/" + inex,
+            return $http({
+                url: "/tasks/" + index,
                 method: "DELETE"
+            }).then(function(response) {
+                return response;
+            });
+        }
+        function editTask(index, newTask) {
+            return $http({
+                url: "/tasks/" + index,
+                method: "PUT",
+                data: {task: newTask }
             }).then(function(response) {
                 return response;
             });
