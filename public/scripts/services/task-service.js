@@ -28,17 +28,17 @@
             })
         }
 
-        function deleteTask(index) {
+        function deleteTask(id) {
             return $http({
-                url: "/tasks/" + index,
+                url: "/tasks/" + id,
                 method: "DELETE"
             }).then(function(response) {
                 return response;
             });
         }
-        function editTask(index, newTask) {
+        function editTask(id, newTask) {
             return $http({
-                url: "/tasks/" + index,
+                url: "/tasks/" + id,
                 method: "PUT",
                 data: {task: newTask }
             }).then(function(response) {

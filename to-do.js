@@ -1,5 +1,6 @@
 var express = require("express");
 var routes = express.Router();
+var pool = require("./pg-connection-pool.js");
 
 routes.get("/tasks", function(req, res) {
     res.send("this is a get");
